@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            background-color: black;
+        }
+        #cal {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            border-radius: 15px;
+            max-width: 500px;
+            overflow: hidden;
+
+        }
+        #calDisplay {
+            width: 100%;
+            padding: 20px;
+            font-size: 5rem;
+            text-align: left;
+            border-color: black;
+            border-radius: 40px;
+            background-color: white;
+
+        }
+        #keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            padding: 25px;
+
+        }
+        #equalsAndClear {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            padding: 25px;
+            background-color: rgb(20, 107, 219);
+
+
+        }
+        button {
+            width: 100px;
+            height: 100px;
+            border-radius: 40px;
+            background-color: lightslategray;
+            color: black;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(80, 139, 139);
+        }
+        button:active {
+            background-color: darkslategray;
+        }
+        .eAndC{
+            background-color: white;
+        }
+        .eAndC:hover{
+            background-color: darkgray;
+        }
+        .eAndC:active{
+            background-color: rgba(169, 169, 169, 0.486);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="cal"> <!-- cal stands for calculator -->
+        <input id="calDisplay" readonly> <!-- for the display of the numbers we enter using calculator buttons and read only so no one can type in the display -->
+        <div id="keys"> <!-- for calculator buttons/keys-->
+            <button onclick="addToDisplay('+')">+</button>
+            <button onclick="addToDisplay('7')">7</button>
+            <button onclick="addToDisplay('8')">8</button>
+            <button onclick="addToDisplay('9')">9</button>
+            <button onclick="addToDisplay('-')">-</button>
+            <button onclick="addToDisplay('4')">4</button>
+            <button onclick="addToDisplay('5')">5</button>
+            <button onclick="addToDisplay('6')">6</button>
+            <button onclick="addToDisplay('*')">*</button>
+            <button onclick="addToDisplay('1')">1</button>
+            <button onclick="addToDisplay('2')">2</button>
+            <button onclick="addToDisplay('3')">3</button>
+            <button onclick="addToDisplay('/')">/</button> <!-- '/' means divide -->
+            <button onclick="addToDisplay('0')">0</button>
+            <button onclick="addToDisplay('.')">.</button>
+        </div>
+        <div id="equalsAndClear">
+            <button onclick="workOut()" class="eAndC">=</button>
+            <button onclick="clearCal()" class="eAndC">clear</button>
+        </div>
+        
+    </div>
+    
+
+    <script src="calculator.js"></script>
+</body>
+</html>
